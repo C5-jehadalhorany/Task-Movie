@@ -2,6 +2,8 @@ import { useState, useContext, useEffect } from "react";
 import { Routes, Route, Link, useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
 import "bootstrap/dist/css/bootstrap.min.css";
+import bootstrap from 'bootstrap'
+import Popup from "../popup";
 import("./style.css")
 
 
@@ -26,8 +28,7 @@ const Detalis = () => {
 
 
     const click_fav = () => {
-
-        fav.push()
+        setfav([...fav,...detali ])
         localStorage.setItem("fav", fav)
     }
 
@@ -66,11 +67,8 @@ const Detalis = () => {
                         <div className="control">
 
 
-                            <button className="btn">
-                                <span className="price">add</span>
-                                <span className="shopping-cart"><i class="fa fa-heart"></i></span>
-                                <span className="buy">fav</span>
-                            </button>
+                            <Popup/>
+
 
 
                         </div>

@@ -1,35 +1,37 @@
 import "bootstrap/dist/css/bootstrap.min.css";
-
-
+import { Modal, Container, Nav, Image, Button, Badge } from 'react-bootstrap'
+import { useState, useEffect } from "react";
+import("./style.css")
 const Popup = () => {
 
+  const [show, setShow] = useState(false);
 
-  return (<>
-    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-      <span className="price" >add </span>
-      <span className="shopping-cart"> <i class="fa fa-heart"></i></span>
-      <span className="buy">fav </span>
-    </button>
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
 
+  return (
+    <>
+      <Button variant="primary" onClick={handleShow}>
+        Launch demo modal
+      </Button>
 
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">favorites list</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-            Do you want to add this movie to your favorites list?
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">add</button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </>)
+      <Modal show={show} onHide={handleClose}>
+        <Modal.Header closeButton>
+          <Modal.Title>Modal heading</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>Woohoo, you're reading this text in a modal!</Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={handleClose}>
+            Close
+          </Button>
+          <Button variant="primary" onClick={handleClose}>
+            Save Changes
+          </Button>
+        </Modal.Footer>
+      </Modal>
+    </>
+  );
+
 }
 
 export default Popup;

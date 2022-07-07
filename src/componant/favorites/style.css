@@ -1,0 +1,67 @@
+.all_it{
+    
+    
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 50%;
+ 
+   
+}
+
+.img_fav{
+width: 50%;
+}
+.allitforfav{
+    display: flex;
+    flex-direction: row;
+    
+}
+
+.favcon{
+    /* display: flex; */
+    /* flex-wrap: wrap; */
+    /* flex-direction: row; */
+  
+}
+.deleteallforfav{
+    display: grid;
+    width: 50%;
+    /* height: 25%; */
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: stretch;
+    justify-content: space-evenly;
+    align-items: stretch;
+    color: black;
+    margin-bottom: 10px;
+}
+
+.contaerforfav{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: gainsboro;
+}
+
+
+
+
+.btns  {
+    transition: 0.3s linear;
+    background: #254ab7;
+    border-radius: 5px;
+    /* position: relative; */
+    /* left: 150px; */
+    /* top: 100px; */
+    overflow: hidden;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    color: rgb(255, 255, 255);
+    padding: 0;
+    margin: 10px;
+}

@@ -1,0 +1,111 @@
+.contaer_forMovie {
+  /* grid-template-columns: auto auto; */
+  /* grid-gap: 1.5rem 1.5rem; */
+  align-items: center;
+  justify-content: space-evenly;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  /* width: 200vh; */
+  justify-content: center;
+  align-items: center;
+  /* display: flex;\
+  align-items: center;
+  justify-content: space-evenly; */
+  margin: 0px 2px 0px ;
+  background-color: gainsboro;
+}
+
+.div_img {
+  width: 90vh;
+  display: grid;
+  grid-template-columns: 40% auto;
+  box-shadow: 0 2px 8px rgb(0 0 0 / 10%);
+  position: relative;
+  justify-content: space-evenly;
+  align-content: stretch;
+  justify-items: center;
+  margin-top: 10px;
+  margin: 10px 10px;
+  /* height: 100%; */
+  border-radius:5px ;
+}
+.div_img img {
+  height: 300px;
+  border-radius:5px ;
+}
+.img_for_movie {
+  /* margin-top: 10px; */
+  width: 100%;
+  height: 100%;
+}
+.date_for_movie {
+  margin: 3vh;
+  margin-right: 5px;
+  font-weight: bold;
+}
+
+.div_for_all {
+  /* padding: 1rem; */
+}
+
+.h1_div_movie {
+  margin-top: 10px;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  line-height: 1.2;
+  justify-items: center;
+  justify-content: center;
+  display: flex;
+  font-weight: bold;
+}
+.date_for_movie_div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 10px 10px;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.p_div_movie{
+  margin-top: 40px;
+  margin-left: 5px;
+}
+
+
+.button_lodemore{
+  /* width: 200px;
+  color: #fff;
+  display: block;
+  text-align: center;
+  margin: 20px auto;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid transparent;
+  background-color: blue;
+  transition: .3s; */
+
+  background: rgb(26, 8, 8);
+    width: 25%;
+    min-width: 200px;
+    height: 70px;
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+    border-radius: 40px;
+    font-family: Abel, sans-serif;
+    font-size: 28px;
+    max-width: 1280px;
+    display: block;
+    margin: 20px auto;
+    padding: 0px 20px;
+    outline: none;
+}
+
+.button_lodemore:hover {  
+  color: blue;  
+  background-color: #fff;  
+  border: 1px solid blue;  
+  text-decoration: none;  
+}  

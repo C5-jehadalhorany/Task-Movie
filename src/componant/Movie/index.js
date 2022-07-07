@@ -17,6 +17,7 @@ const Movie = () => {
         axios.post(`https://api.themoviedb.org/3/movie/popular?api_key=1bfa430aada4409bfa6a3c5528128e8a`).then((result) => {
             console.log(result.data.results);
             setMovie(result.data.results)
+          
         }).catch((err) => {
             console.log(err);
         })
@@ -29,7 +30,7 @@ const Movie = () => {
                 `https://api.themoviedb.org/3/movie/popular?api_key=1bfa430aada4409bfa6a3c5528128e8a&page=${page}`
             ).then((result) => {
                 setLoad(result.data.results);
-                setMovie([...movie, ...load]);
+                setMovie([...movie, ...result.data.results]);
             })
             .catch((err) => {
                 console.log(err);
@@ -38,7 +39,7 @@ const Movie = () => {
     }
     useEffect(() => {
         createMovie()
-        loadMorre()
+        
     }, [])
    
 

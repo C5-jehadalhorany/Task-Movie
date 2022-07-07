@@ -1,12 +1,18 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './App.css';
 import NavbaR from './componant/Navbar';
 import Movie from './componant/Movie';
+import { Routes, Route, Link } from "react-router-dom";
+import MovieDetiles from './componant/Details';
+import './App.css';
 
 function App() {
     return (<div>
         <NavbaR/>
-        <Movie/>
+        <Routes>
+        <Route path='/' element={ <Movie/>} />
+        <Route path='/details/:id' element={<MovieDetiles />} />
+        </Routes>
+        
     </div>)
 }
 

@@ -4,13 +4,31 @@ import axios from "axios";
 import "bootstrap/dist/css/bootstrap.min.css";
 import bootstrap from 'bootstrap'
 import Popup from "../popup";
+import { tokenContext } from "../../App";
+import { addFav } from "../../redux/reducers/fav";
+import { useDispatch, useSelector } from "react-redux";
+import { Modal, Container, Nav, Image, Button, Badge } from 'react-bootstrap'
+
+
 import("./style.css")
 
 
 
 
 const Detalis = () => {
-    const [fav, setfav] = useState(localStorage.getItem("fav") || [])
+    // const [fav, setfav] = useState(localStorage.getItem("fav") || [])
+    const dispatch = useDispatch()
+
+
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
+    const [show, setShow] = useState(false);
+
+    const {
+        fav,
+        setfav
+    } = useContext(tokenContext);
+
     const navigate = useNavigate();
     const [detali, setDetali] = useState([])
     let { id } = useParams()
@@ -28,7 +46,7 @@ const Detalis = () => {
 
 
     const click_fav = () => {
-        setfav([...fav,...detali ])
+        setfav([...fav, setDetali])
         localStorage.setItem("fav", fav)
     }
 
@@ -67,8 +85,40 @@ const Detalis = () => {
                         <div className="control">
 
 
-                            <Popup/>
+                            <>
+                                <button onClick={handleShow} type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                    <span className="price" >add </span>
+                                    <span className="shopping-cart"> <i class="fa fa-heart"></i></span>
+                                    <span className="buy">fav </span>
+                                </button>
 
+                                {/* <Button variant="primary" onClick={handleShow}>
+                                    Launch
+                                </Button> */}
+
+
+                                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-titles" id="exampleModalLabel">favorites list</h5>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                Do you want to add this movie to your favorites list?
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btns btn-secondary" data-bs-dismiss="modal" >Close</button>
+                                                <button data-bs-dismiss="modal" type="button" class="btns btn-secondary" onClick={() => {
+                                                    dispatch(addFav(detali));
+
+                                                }}>add</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </>
+                    
 
 
                         </div>

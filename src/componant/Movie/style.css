@@ -14,6 +14,7 @@
   justify-content: space-evenly; */
   margin: 0px 2px 0px ;
   background-color: gainsboro;
+  transition: transform 900ms cubic-bezier(0.5, 0, 0.5, 1), opacity 250ms linear;
 }
 
 .div_img {
@@ -29,6 +30,7 @@
   margin: 10px 10px;
   /* height: 100%; */
   border-radius:5px ;
+  transition: transform 900ms cubic-bezier(0.5, 0, 0.5, 1), opacity 250ms linear;
 }
 .div_img img {
   height: 300px;
@@ -38,11 +40,13 @@
   /* margin-top: 10px; */
   width: 100%;
   height: 100%;
+  transition: transform 900ms cubic-bezier(0.5, 0, 0.5, 1), opacity 250ms linear;
 }
 .date_for_movie {
   margin: 3vh;
   margin-right: 5px;
   font-weight: bold;
+  transition: transform 900ms cubic-bezier(0.5, 0, 0.5, 1), opacity 250ms linear;
 }
 
 .div_for_all {
@@ -58,6 +62,32 @@
   justify-content: center;
   display: flex;
   font-weight: bold;
+  position: relative;
+	/* font-size: 2rem; */
+	font-weight: 700;
+
+
+}
+.h1_div_movie:hover {
+  background-color: silver;
+  line-height: 1.333;
+	transition: .4s ease-out;
+  font-size: 125%;
+  /* transform: scale(1.5); */
+  animation: slide 2s linear;
+
+  /* position:absolute; */
+  /* color:#262626; */
+ 
+  overflow:hidden;
+  transition:all 0.5s;
+  cursor: pointer;
+
+}
+
+.img_for_movie:hover {
+  transform: scale(1.12);
+  cursor: pointer; /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
 }
 .date_for_movie_div {
   display: flex;

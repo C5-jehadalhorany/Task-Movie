@@ -13,9 +13,7 @@ const NavbaR = () => {
 
  const favState = useSelector((state) => {
     return {
-
         fav: state.fav.fav,
-
     };
 });
 

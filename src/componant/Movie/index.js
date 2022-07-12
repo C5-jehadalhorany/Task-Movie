@@ -49,7 +49,7 @@ const Movie = () => {
             return (<div key={element.id} className="div_img">
                 <img src={`${link}${element.poster_path}`} className="img_for_movie" onClick={() => { navigate(`details/${element.id}`) }} />
                 <div className="div_for_all">
-                    <h6 className="h1_div_movie">{element.title}</h6>
+                    <h6 className="h1_div_movie" onClick={() => { navigate(`details/${element.id}`) }}>{element.title}</h6>
                     <p className="p_div_movie">{element.overview.length < 200 ? (element.overview) : (element.overview.substring(0, length - 3) + "...")}</p>
                     <div className="date_for_movie_div">
                         <span className="date_for_movie">{element.release_date}</span>
